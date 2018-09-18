@@ -520,10 +520,10 @@ for (StudentEntity entityTemp : studentList) {
 } 
 ```
 #### 2.5.5字符串代入法 
-        默认的情况下，使用#{}语法会促使MyBatis 生成PreparedStatement 属性并且使用PreparedStatement 的参数（=？）来安全的设置值。尽量这些是快捷安全，也是经常使用的。但有时候你可能想直接未更改的字符串代入到SQL 语句中。比如说，对于ORDER BY，你可能会这样使用：ORDER BY ${columnName}但MyBatis 不会修改和规避掉这个字符串。 
-        注意：这样地接收和应用一个用户输入到未更改的语句中，是非常不安全的。这会让用户能植入破坏代码，所以，要么要求字段不要允许客户输入，要么你直接来检测他的合法性 。 
+  默认的情况下，使用#{}语法会促使MyBatis 生成PreparedStatement 属性并且使用PreparedStatement 的参数（=？）来安全的设置值。尽量这些是快捷安全，也是经常使用的。但有时候你可能想直接未更改的字符串代入到SQL 语句中。比如说，对于ORDER BY，你可能会这样使用：ORDER BY ${columnName}但MyBatis 不会修改和规避掉这个字符串。 
+  注意：这样地接收和应用一个用户输入到未更改的语句中，是非常不安全的。这会让用户能植入破坏代码，所以，要么要求字段不要允许客户输入，要么你直接来检测他的合法性 。 
 ### 2.6 cache缓存 
-        MyBatis 包含一个强在的、可配置、可定制的缓存机制。MyBatis 3 的缓存实现有了许多改进，既强劲也更容易配置。默认的情况，缓存是没有开启，除了会话缓存以外，它可以提高性能，且能解决全局依赖。开启二级缓存，你只需要在SQL 映射文件中加入简单的一行：<cache/> 
+  MyBatis 包含一个强在的、可配置、可定制的缓存机制。MyBatis 3 的缓存实现有了许多改进，既强劲也更容易配置。默认的情况，缓存是没有开启，除了会话缓存以外，它可以提高性能，且能解决全局依赖。开启二级缓存，你只需要在SQL 映射文件中加入简单的一行：<cache/> 
 这句简单的语句的作用如下： 
 （1）. 所有在映射文件里的select 语句都将被缓存。 
 （2）. 所有在映射文件里insert,update 和delete 语句会清空缓存。 
@@ -539,7 +539,7 @@ for (StudentEntity entityTemp : studentList) {
 </cache>
 ```
 还可以在不同的命名空间里共享同一个缓存配置或者实例。在这种情况下，你就可以使用cache-ref 来引用另外一个缓存。 
-<cache-ref namespace="com.liming.manager.data.StudentMapper"/> 
+`<cache-ref namespace="com.liming.manager.data.StudentMapper"/>` 
 Cache 语句属性配置细节： 
 属性	说明	取值	默认值 
 eviction	缓存策略： 
@@ -556,4 +556,3 @@ size	缓存的对象的大小	正整数	1024
 readOnly	
 只读缓存将对所有调用者返回同一个实例。因此都不能被修改，这可以极大的提高性能。可写的缓存将通过序列 
 化来返回一个缓存对象的拷贝。这会比较慢，但是比较安全。所以默认值是false。 
-true|false	false 
