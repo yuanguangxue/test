@@ -25,17 +25,17 @@ resultMap 是MyBatis 中最重要最强大的元素了。你可以让你比使�
 resultMap属性：type为java实体类；id为此resultMap的标识。   
 resultMap可以设置的映射：<br/>
 （1）. constructor – 用来将结果反射给一个实例化好的类的构造器<br/>
-　　a) idArg – ID 参数；将结果集标记为ID，以方便全局调用<br/>
-　　b) arg –反射到构造器的通常结果<br/>
+　　`a) idArg – ID 参数；将结果集标记为ID，以方便全局调用`<br/>
+　　`b) arg –反射到构造器的通常结果`<br/>
 （2）. id – ID 结果，将结果集标记为ID，以方便全局调用<br/>
 （3）. result – 反射到JavaBean 属性的普通结果<br/>
 （4）. association – 复杂类型的结合；多个结果合成的类型<br/>
-　　a) nested result mappings – 几resultMap 自身嵌套关联，也可以引用到一个其它上<br/>
+　　`a) nested result mappings – 几resultMap 自身嵌套关联，也可以引用到一个其它上`<br/>
 （5）. collection –复杂类型集合a collection of complex types<br/>
 （6）. nested result mappings – resultMap 的集合，也可以引用到一个其它上<br/>
 （7）. discriminator – 使用一个结果值以决定使用哪个resultMap<br/>
-　　a) case – 基本一些值的结果映射的case 情形<br/>
-　　`i. nested result mappings –一个case 情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap。`<br/>
+　　`a) case – 基本一些值的结果映射的case 情形`<br/>
+　　`ps. nested result mappings –一个case 情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap。`<br/>
 #### 1.1.1 id、result  
 id、result是最简单的映射，id为主键映射；result其他基本数据库表字段到实体类属性的映射。<br/>
 最简单的例子：<br/>
