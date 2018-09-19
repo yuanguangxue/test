@@ -33,9 +33,10 @@ resultMap可以设置的映射：<br/>
 　　`a) nested result mappings – 几resultMap 自身嵌套关联，也可以引用到一个其它上`<br/>
 （5）. collection –复杂类型集合a collection of complex types<br/>
 （6）. nested result mappings – resultMap 的集合，也可以引用到一个其它上<br/>
+　 `ps: nested result mappings –一个case 情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap。`<br/>
 （7）. discriminator – 使用一个结果值以决定使用哪个resultMap<br/>
 　　`a) case – 基本一些值的结果映射的case 情形`<br/>
-　　`ps. nested result mappings –一个case 情形本身就是一个结果映射，因此也可以包括一些相同的元素，也可以引用一个外部resultMap。`<br/>
+　
 #### 1.1.1 id、result  
 id、result是最简单的映射，id为主键映射；result其他基本数据库表字段到实体类属性的映射。<br/>
 最简单的例子：<br/>
